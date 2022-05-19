@@ -1,11 +1,11 @@
-export const GET_POKEMON_FROM_API = 'GET_POKEMON_FROM_API';
-export const GET_POKEMON_SUCCESS = 'GET_POKEMON_SUCCESS';
+export const GET_POKEMONS_FROM_API = 'GET_POKEMONS_FROM_API';
+export const GET_POKEMONS_SUCCESS = 'GET_POKEMONS_SUCCESS';
 
-export const getPokemonDetailsFromAPI = () => ({
-    type: GET_POKEMON_FROM_API
+export const getPokemonsFromAPI = () => ({
+    type: GET_POKEMONS_FROM_API
 });
 
-export const getPokemonSuccess = (pokemonAPI) => ({
-    type: GET_POKEMON_SUCCESS,
-    pokemonAPI
+export const getPokemonsSuccess = (pokemonsAPI) => ({
+    type: GET_POKEMONS_SUCCESS,
+    pokemonsAPI
 });

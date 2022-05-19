@@ -4,10 +4,10 @@ const initializeState = {
 
 const reducer = (state = initializeState, action) => {
     switch(action.type) {
-        case 'GET_POKEMON_SUCCESS':
+        case 'GET_POKEMONS_SUCCESS':
             return {
                 ...state,
-                pokemons: action.pokemonAPI
+                pokemons: action.pokemonsAPI
             }
         default: 
             return state;

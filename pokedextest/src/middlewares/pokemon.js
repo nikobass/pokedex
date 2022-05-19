@@ -1,19 +1,18 @@
 import axios from 'axios';
 
-import { getPokemonSuccess, GET_POKEMON_FROM_API } from '../actions';
+import { getPokemonsSuccess, GET_POKEMONS_FROM_API } from '../actions';
 
-const testMiddleware = (store) => (next) => (action) => {
+const pokemonMiddleware = (store) => (next) => (action) => {
 
     switch (action.type) {
-      case GET_POKEMON_FROM_API: {         
+      case GET_POKEMONS_FROM_API: {         
   
         axios({
           method: 'get',
           url: `https://pokeapi.co/api/v2/pokemon/`          
         })
-        .then((response) => {            
-            console.log(response.data.results);  
-          store.dispatch(getPokemonSuccess(response.data.results));
+        .then((response) => {          
+          store.dispatch(getPokemonsSuccess(response.data.results));
         })
         .catch(error => console.log(error));
         break;
@@ -25,4 +24,4 @@ const testMiddleware = (store) => (next) => (action) => {
     }
   };
   
-  export default testMiddleware;
+  export default pokemonMiddleware;

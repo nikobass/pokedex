@@ -1,6 +1,6 @@
 import React, { useEffect }  from 'react';
 import { connect, useDispatch } from 'react-redux';
-import {getPokemonDetailsFromAPI} from '../../actions';
+import {getPokemonsFromAPI} from '../../actions';
 import PokemonCard from '../PokemonCard';
 import { Link } from 'react-router-dom';
 
@@ -8,7 +8,7 @@ const PokemonsCards = ({pokemons}) => {
 
     const dispatch = useDispatch();
     useEffect(() => {       
-        dispatch(getPokemonDetailsFromAPI()); 
+        dispatch(getPokemonsFromAPI()); 
     }, []);
 
     return(
@@ -17,7 +17,7 @@ const PokemonsCards = ({pokemons}) => {
             pokemons.map((pokemon, index) => 
             <div>
               <div>
-                <Link to={pokemon.name}>
+                <Link to={`pokemon/${index+1}`}>
                     <PokemonCard 
                       pokemonName={pokemon.name}         
                       pokemonId={index+1}
