@@ -1,0 +1,26 @@
+.title-header{
+    color: rgb(245, 227, 148);
+    background-color: rgb(214, 68, 68);
+    margin-top: 0;
+    padding: 1em;
+    text-align: center;
+}
+
+.cards {
+    border-bottom: 1px solid #a09393;
+}
+
+.main {
+    text-align: center;
+}
+
+a:link { text-decoration: none; }
+
+
+a:visited { text-decoration: none; }
+
+
+a:hover { text-decoration: none; }
+
+
+a:active { text-decoration: none; }

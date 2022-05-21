@@ -1,5 +1,8 @@
 import React from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+
+import './pokemoncard.css'
 
 import {
   useParams
@@ -40,7 +43,7 @@ const PokemonCard = ({pokemonName, pokemonId}) => {
     <div>
        { !id && 
        <div>
-          <h3>{pokemonName}</h3>            
+          <h3 className='pokename'>{pokemonName} - n°{pokemonId}</h3>            
         <img
           src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId}.png`}
           alt="image pokemon">
@@ -51,6 +54,10 @@ const PokemonCard = ({pokemonName, pokemonId}) => {
       
       { id && 
         <div>
+          <Link to={`/`}>
+            <h1 className='title-header'>Pokedex</h1>
+          </Link>
+          <div className='pokecard'>
            <img
             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokeid}.png`}
             alt="image pokemon">
@@ -60,14 +67,14 @@ const PokemonCard = ({pokemonName, pokemonId}) => {
           <p>Color: {color}</p>
           <p>Habitat: {habitat}</p>
           <p>Type(s):</p>  
-          <ul>
+          
             {            
               types.map((pokeType) =>             
-                  <li key={pokeid}>{pokeType.type.name}</li>        
+                  <p key={pokeid}>{pokeType.type.name}</p>        
               )
             }
-          </ul>        
-          
+               
+          </div>
         </div>
       } 
      
