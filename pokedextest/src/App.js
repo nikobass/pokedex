@@ -1,7 +1,7 @@
 import React from 'react';
 import PokemonsCards from './components/PokemonsCards';
 import PokemonCard from './components/PokemonCard';
-import { Switch, Route, useParams} from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 const App = () => {
   

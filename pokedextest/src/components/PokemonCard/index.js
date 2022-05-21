@@ -11,8 +11,8 @@ const PokemonCard = ({pokemonName, pokemonId}) => {
   const [pokeid, setId] = React.useState(null);
   const [color, setColor] = React.useState(null);
   const [habitat, setHabitat] = React.useState(null);
-  const [types, setType] = React.useState([]);
-
+  const [types, setType] = React.useState([]); 
+  
   React.useEffect(() => {
     
     if(id) {
@@ -23,7 +23,8 @@ const PokemonCard = ({pokemonName, pokemonId}) => {
       .then((response) => {           
           setName(response.data.name);    
           setId(response.data.id);
-          setType(response.data.types);      
+          setType(response.data.types);            
+
           axios({
             method: 'get',
             url: `${response.data.species.url}`          
@@ -33,8 +34,7 @@ const PokemonCard = ({pokemonName, pokemonId}) => {
           })
       }).catch(error => console.log(error));
     }
-  }, []);
- 
+  }, []); 
  
   return (
     <div>
@@ -44,7 +44,7 @@ const PokemonCard = ({pokemonName, pokemonId}) => {
         <img
           src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId}.png`}
           alt="image pokemon">
-        </img> 
+        </img>     
         </div>
       } 
 
@@ -62,8 +62,8 @@ const PokemonCard = ({pokemonName, pokemonId}) => {
           <p>Type(s):</p>  
           <ul>
             {            
-              types.map((test) =>             
-                  <li>{test.type.name}</li>        
+              types.map((pokeType) =>             
+                  <li key={pokeid}>{pokeType.type.name}</li>        
               )
             }
           </ul>        
