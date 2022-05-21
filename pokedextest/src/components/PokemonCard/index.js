@@ -65,7 +65,7 @@ const PokemonCard = ({pokemonName, pokemonId}) => {
           {errorMsg && <p>{errorMsg}</p>}  
          
           {!errorMsg &&   
-          <div>
+          <div className={!pokeid ? 'none' : 'show'}>
               <img
             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokeid}.png`}
             alt="image pokemon">
