@@ -38,12 +38,9 @@ const PokemonCard = ({pokemonName, pokemonId}) => {
           })
       }).catch(error => setErrorMsg("Ce pokemon est introuvable. Veuillez retourner à l'accueil."));
     }
-  }, []); 
- 
- 
+  }, []);   
 
-  return (
-    
+  return (    
     <div>      
        { !id && 
        <div>
@@ -54,78 +51,61 @@ const PokemonCard = ({pokemonName, pokemonId}) => {
         </img>     
         </div>
       } 
-
-
       { id && 
         <div>
           <Link to={`/`}>
             <h1 className='title-header'>Pokedex</h1>
           </Link>
-          <div class={!pokeid ? 'none' : 'show, wrapper'}>
-            
-  <div class="card">
-    <div class="card__body">
-      <div class="card__head">
-        <div class="main-info">
-          <div class="pre-evo">
-            <span class="pre-evo__badge"></span>
-            <span class="pre-evo__badge-front"></span>
-            <span class="pre-evo__title">N°{pokeid}</span>
-            <img className='img-poke'
-            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokeid}.png`}
-            alt="image pokemon">
-          </img>   
-            <div class="pre-evo__img">
-             
+          <div class={!pokeid ? 'none' : 'show, wrapper'}>            
+            <div class="card">
+              <div class="card__body">
+                <div class="card__head">
+                  <div class="main-info">
+                    <div class="pre-evo">
+                      <span class="pre-evo__badge"></span>
+                      <span class="pre-evo__badge-front"></span>
+                      <span class="pre-evo__title">N°{pokeid}</span>
+                      <img className='img-poke'
+                      src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokeid}.png`}
+                      alt="image pokemon">
+                    </img>   
+                      <div class="pre-evo__img">
+                      
+                      </div>
+                    </div>     
+                    <span class="put-card">Pokemon card</span>
+                    <h1 class="name">{pokename}</h1>       
+                  </div>
+
+                  <div class="frame">
+                    <div class="frame__img">       
+                    </div>
+                  </div>
+                  <div class="stats">
+                    <span>Color: {color} - Habitat: {habitat} </span>
+                  </div>
+                  <ul class="attacks">          
+                    <li class="attack">           
+                      <p>
+                        <strong>Type(s)</strong>{            
+                        types.map((pokeType) =>             
+                            <p key={pokeid}>{pokeType.type.name}</p>        
+                        )
+                      }
+                      </p>          
+                    </li>
+                  </ul>      
+                </div>   
+                <div class="footer">     
+                  <p>&copy; 1995, 96, 98, 99 Nintendo, Creatures, GAMEFREAK. &copy; 1999 Wizards.</p>       
+                  <p><i class="fa fa-fw fa-star"></i></p>
+                </div>
+              </div>
             </div>
-          </div>     
-          <span class="put-card">Pokemon card</span>
-          <h1 class="name">{pokename}</h1>       
-        </div>
-
-        <div class="frame">
-          <div class="frame__img">         
-         
           </div>
-        </div>
-
-
-        <div class="stats">
-          <span>Color: {color} - Habitat: {habitat} </span>
-        </div>
-        <ul class="attacks">
-          
-          <li class="attack">
-           
-            <p>
-              <strong>Type(s)</strong>{            
-              types.map((pokeType) =>             
-                  <p key={pokeid}>{pokeType.type.name}</p>        
-              )
-            }
-            </p>
-          
-          </li>
-        </ul>
-        
-
-      </div>
-     
-
-      <div class="footer">     
-        <p>&copy; 1995, 96, 98, 99 Nintendo, Creatures, GAMEFREAK. &copy; 1999 Wizards.</p>       
-        <p><i class="fa fa-fw fa-star"></i></p>
-      </div>
-    </div>
-  </div>
-</div>
-          <div className='pokecard'>
-         
-          {errorMsg && <p className='errormsg'>{errorMsg}</p>}          
-         
-          
-          </div>
-          
+          <div className='pokecard'>         
+           {errorMsg && <p className='errormsg'>{errorMsg}</p>}         
+          </div>          
         </div>
       } 
     </div>

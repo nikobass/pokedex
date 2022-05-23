@@ -18,8 +18,7 @@ const PokemonsCards = ({pokemons}) => {
     const [search, setSearch] = React.useState();
     let history=useHistory();
  
-    return(        
-         
+    return(                 
         <div className='main'>
         <div>
           <h1 className='title-header'>Pokedex</h1>      
@@ -50,8 +49,7 @@ const PokemonsCards = ({pokemons}) => {
             </div>
             )
           }          
-        </div>
-        
+        </div>        
     )
 }
 
