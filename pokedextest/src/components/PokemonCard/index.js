@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect }  from 'react';
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import {getPokemonDetailsSuccess} from '../../actions';
 
 import './pokemoncard.scss'
 
@@ -9,6 +11,14 @@ import {
 } from "react-router-dom";
 
 const PokemonCard = ({pokemonName, pokemonId}) => {
+
+  const dispatch = useDispatch();
+  useEffect(() => {   
+    if(id) {
+      dispatch(getPokemonDetailsSuccess()); 
+    }      
+  }, []);
+
   const { id } = useParams();
   const [pokename, setName] = React.useState(null);
   const [pokeid, setId] = React.useState(null);
@@ -27,18 +37,20 @@ const PokemonCard = ({pokemonName, pokemonId}) => {
       .then((response) => {           
           setName(response.data.name);    
           setId(response.data.id);
-          setType(response.data.types);            
-
+          setType(response.data.types);          
           axios({
             method: 'get',
             url: `${response.data.species.url}`          
           }).then((response) => {
             setColor(response.data.color.name);
-            setHabitat(response.data.habitat.name);
+            setHabitat(response.data.habitat.name);           
           })
+  
       }).catch(error => setErrorMsg("Ce pokemon est introuvable. Veuillez retourner à l'accueil."));
     }
   }, []);   
+
+
 
   return (    
     <div>      

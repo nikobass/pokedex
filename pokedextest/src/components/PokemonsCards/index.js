@@ -1,37 +1,38 @@
 import React, { useEffect }  from 'react';
 import { connect, useDispatch } from 'react-redux';
-import {getPokemonsFromAPI} from '../../actions';
+import {getPokemonsFromAPI, setPokemonName, submitFormPokemon} from '../../actions';
 import PokemonCard from '../PokemonCard';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 import './pokemonscards.scss'
 
-const PokemonsCards = ({pokemons}) => { 
+const PokemonsCards = ({pokemons,pokemonName, inputPokemonName,handleSubmit, handleInput}) => { 
 
     const dispatch = useDispatch();
     useEffect(() => {       
         dispatch(getPokemonsFromAPI()); 
     }, []);
 
-    const [search, setSearch] = React.useState();
-    let history=useHistory();
- 
     return(                 
         <div className='main'>
         <div>
-          <h1 className='title-header'>Pokedex</h1>      
-          <form>
+          <h1 className='title-header'>Pokedex</h1>           
+          <form onSubmit={handleSubmit}
+         >
+           { pokemonName &&<Redirect to={`/pokemon/${pokemonName}`} />}
           <input            
-            type="text"
+            type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
             placeholder="nom ou numéro d'un pokémon"
-            onChange={(e) => setSearch(e.target.value)}
-            required
-          />
-          <button onClick={() => history.push(`/pokemon/${search}`)}>
+            onChange={handleInput}
+            value={inputPokemonName}
+            required          
+          />        
+     
+     <button onClick={handleSubmit}>
           <FontAwesomeIcon icon={faSearch} />
-          </button>
+          </button>  
           </form>     
         </div>     
           {
@@ -54,7 +55,19 @@ const PokemonsCards = ({pokemons}) => {
 }
 
 const mapStateToProps = (state) => ({
-    pokemons: state.pokemons
+    pokemons: state.pokemons,
+    pokemonName: state.pokemonName,
+    inputPokemonName: state.inputPokemonName
   });   
+
+  const mapDispatchToProps = (dispatch) => ({
+    handleInput: (event) => {
+      dispatch(setPokemonName(event.target.value))
+    },
+    handleSubmit: (event) => {  
+      event.preventDefault();     
+      dispatch(submitFormPokemon())
+    }
+  })
   
-export default connect(mapStateToProps)(PokemonsCards);
+export default connect(mapStateToProps, mapDispatchToProps)(PokemonsCards);
