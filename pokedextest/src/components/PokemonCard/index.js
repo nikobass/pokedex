@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import {getPokemonDetailsSuccess} from '../../actions';
 
 import './pokemoncard.scss'
+import imgpokedex from '../../pokedex.2800773d.png'
 
 import {
   useParams
@@ -66,7 +67,11 @@ const PokemonCard = ({pokemonName, pokemonId}) => {
       { id && 
         <div>
           <Link to={`/`}>
-            <h1 className='title-header'>Pokedex</h1>
+            <h1 className='title-header'>
+              <img className="image-header" src={imgpokedex}
+                  alt="image pokedex">
+              </img>   
+            </h1>        
           </Link>
           <div class={!pokeid ? 'none' : 'show, wrapper'}>            
             <div class="card">

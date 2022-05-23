@@ -9,7 +9,7 @@ const pokemonMiddleware = (store) => (next) => (action) => {
   
         axios({
           method: 'get',
-          url: `https://pokeapi.co/api/v2/pokemon/?limit=151`          
+          url: `https://pokeapi.co/api/v2/pokemon/?limit=10`          
         })
         .then((response) => {          
           store.dispatch(getPokemonsSuccess(response.data.results));

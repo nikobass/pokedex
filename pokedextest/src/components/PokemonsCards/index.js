@@ -5,6 +5,7 @@ import PokemonCard from '../PokemonCard';
 import { Link, Redirect } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import imgpokedex from '../../pokedex.2800773d.png'
 
 import './pokemonscards.scss'
 
@@ -13,12 +14,16 @@ const PokemonsCards = ({pokemons,pokemonName, inputPokemonName,handleSubmit, han
     const dispatch = useDispatch();
     useEffect(() => {       
         dispatch(getPokemonsFromAPI()); 
-    }, []);
+    }, []);   
 
     return(                 
         <div className='main'>
         <div>
-          <h1 className='title-header'>Pokedex</h1>           
+          <h1 className='title-header'>
+            <img className="image-header" src={imgpokedex}
+                alt="image pokedex">
+            </img>   
+          </h1>          
           <form onSubmit={handleSubmit}
          >
            { pokemonName &&<Redirect to={`/pokemon/${pokemonName}`} />}

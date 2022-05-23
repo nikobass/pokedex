@@ -71,7 +71,7 @@ h1::first-letter {
   left: 0;
   border-radius: $card-size * 0.0316;
   background-color: #ffe50a;
-  background-image: linear-gradient(to top, #ffe50a, #ffea3d 70%, #ffe50a);
+  background-image: linear-gradient(to top, #fff8b9, #ffea3d 70%, #ffed51);
   box-shadow: 0 $card-size*0.005 $card-size*0.005 rgba(black, 0.5);
   //filter: blur($card-size * 0.0008);
   transform: rotate(-3deg) translate(5%, 2%)
@@ -531,4 +531,8 @@ $badge-front-size: $card-size * 0.171;
   display: flex;
   justify-content: space-between;
   font-size: $card-size * 0.018;
+}
+
+.image-header {
+  height: 5rem;
 }
