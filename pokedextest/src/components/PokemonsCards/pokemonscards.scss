@@ -1,3 +1,7 @@
+body {
+  background-color: antiquewhite;
+}
+
 .title-header{
     color: rgb(245, 227, 148);
     background-color: rgb(214, 68, 68);
@@ -14,13 +18,18 @@
     text-align: center;
 }
 
-a:link { text-decoration: none; }
+input {
+  height: 2rem;
+  width: 19rem;
+  margin-right: 0.3rem;
+  margin-bottom: 3rem;
+}
 
+input[type="text"] {
+  padding-left: 0.5rem;
+}
 
-a:visited { text-decoration: none; }
-
-
-a:hover { text-decoration: none; }
-
-
-a:active { text-decoration: none; }
+button {
+ padding: 0.4rem;
+ cursor: pointer;
+}

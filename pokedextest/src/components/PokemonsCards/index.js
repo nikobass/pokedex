@@ -3,8 +3,10 @@ import { connect, useDispatch } from 'react-redux';
 import {getPokemonsFromAPI} from '../../actions';
 import PokemonCard from '../PokemonCard';
 import { Link, useHistory } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
-import './pokemonscards.css'
+import './pokemonscards.scss'
 
 const PokemonsCards = ({pokemons}) => { 
 
@@ -16,19 +18,20 @@ const PokemonsCards = ({pokemons}) => {
     const [search, setSearch] = React.useState();
     let history=useHistory();
  
-    return(           
+    return(        
+         
         <div className='main'>
         <div>
           <h1 className='title-header'>Pokedex</h1>      
           <form>
           <input            
             type="text"
-            placeholder="Search"
+            placeholder="nom ou numéro d'un pokémon"
             onChange={(e) => setSearch(e.target.value)}
             required
           />
           <button onClick={() => history.push(`/pokemon/${search}`)}>
-            search
+          <FontAwesomeIcon icon={faSearch} />
           </button>
           </form>     
         </div>     
@@ -48,6 +51,7 @@ const PokemonsCards = ({pokemons}) => {
             )
           }          
         </div>
+        
     )
 }
 
