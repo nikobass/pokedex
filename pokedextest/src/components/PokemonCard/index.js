@@ -6,6 +6,8 @@ import {getPokemonDetailsSuccess} from '../../actions';
 
 import './pokemoncard.scss'
 import imgpokedex from '../../pokedex.2800773d.png'
+import pokeball from '../../pokeball.gif'
+
 
 import {
   useParams
@@ -121,7 +123,10 @@ const PokemonCard = ({pokemonName, pokemonId}) => {
             </div>
           </div>
           <div className='pokecard'>         
-           {errorMsg && <p className='errormsg'>{errorMsg}</p>}         
+           {errorMsg && <p className='errormsg'>{errorMsg}</p>}  
+           {!pokemonId && !errorMsg &&    <img className={pokename ? 'none' : 'showLoader'} src={pokeball}
+                  alt="image pokedex">
+              </img>  }       
           </div>          
         </div>
       } 

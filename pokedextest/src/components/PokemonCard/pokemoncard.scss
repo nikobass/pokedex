@@ -1,5 +1,5 @@
 .title-header{
-    color: rgb(245, 227, 148);
+    color: rgb(173 223 248);
     background-color: rgb(214, 68, 68);
     margin-top: 0;
     padding: 1em;
@@ -12,7 +12,7 @@
 }
 
 .pokename {
-    color: #88524c;
+    color: #504e4d;
 }
 
 .none {
@@ -23,6 +23,10 @@
     border: 1px solid black;
     width: 20rem;
     margin: 0 auto;
+}
+
+.showLoader {
+  display: inline-block
 }
 
 a:link { text-decoration: none; }
@@ -73,7 +77,6 @@ h1::first-letter {
   background-color: #ffe50a;
   background-image: linear-gradient(to top, #fff8b9, #ffea3d 70%, #ffed51);
   box-shadow: 0 $card-size*0.005 $card-size*0.005 rgba(black, 0.5);
-  //filter: blur($card-size * 0.0008);
   transform: rotate(-3deg) translate(5%, 2%)
 }
 
@@ -84,7 +87,7 @@ h1::first-letter {
   bottom: 0;
   left: 0;
   margin: $card-size * 0.0528;
-  background-image: url(https://i.imgur.com/x7L9qpC.png);
+  background-image: url(https://png.pngtree.com/thumb_back/fh260/background/20190223/ourmid/pngtree-blue-sky-white-clouds-splashes-of-watercolor-background-skywhite-cloudsblue-sky-image_87892.jpg);
   background-size: cover;
   z-index: 1;
 }
@@ -146,7 +149,6 @@ $pre-evo-size: $card-size * 0.1371;
     }
     &:after {
       transform: rotate(-15deg);
-      //background: linear-gradient(45deg, #bf7c11, #e5be1b, #fff260);
     }
   }
 }
@@ -235,9 +237,9 @@ $badge-front-size: $card-size * 0.171;
   left: $card-size * 0.165;
   transform: scaleX(0.8);
   transform-origin: left;
+  color: rgb(37 59 92);
 }
 .hp {
-  //right: $card-size * 0.0717;
   right: 9%;
   bottom: 3%;
   margin-left: auto;
@@ -255,8 +257,7 @@ $badge-front-size: $card-size * 0.171;
   width: 100%;
   height: $card-size * 0.5805;
   margin-bottom: $card-size * 0.0105;
-  //background-color: #f3ce27;
-  background-image: linear-gradient(45deg, #cf9401, #f9d51e, #ffff7a, #f9d51e, #ffff7a, #cf9401);
+  background-image: linear-gradient(45deg, #ffe7ad, #ffefa0, #ffff7a, #f3e8b2, #ffff7a, #fff0c9);
   box-shadow: $card-size*0.0105 $card-size*0.0105 $card-size*0.0253 $card-size*0.0042 rgba(black, 0.75);
   &:after,
   &:before{
@@ -282,6 +283,11 @@ $badge-front-size: $card-size * 0.171;
 
 .errormsg {
   font-weight: bold;
+}
+
+.loading {
+  font-weight: bold;
+  margin-top: -2rem;
 }
 
 .img-poke {
@@ -336,7 +342,6 @@ $badge-front-size: $card-size * 0.171;
     left: 0;
     margin: 0.3% 0 0;
     background: linear-gradient(90deg, transparent, #cf9401 2%, #f9d51e, #ffff7a, #f9d51e, #cf9401 98%, transparent);
-    //filter: blur($card-size * 0.004)
   }
   > span {
     position: relative;
@@ -515,7 +520,6 @@ $badge-front-size: $card-size * 0.171;
   .modifier {
     display: inline-block;
     vertical-align: middle;
-    //margin-top: -$card-size * 0.025;
   }
   
   .modifier {

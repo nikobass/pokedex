@@ -1,10 +1,9 @@
 body {
-  background-color: antiquewhite;
+  background-color: #fffef8;
 }
 
-.title-header{
-    color: rgb(245, 227, 148);
-    background-color: rgb(214, 68, 68);
+.title-header{  
+    background-color: rgb(173 223 248);
     margin-top: 0;
     padding: 1em;
     text-align: center;
@@ -12,6 +11,10 @@ body {
 
 .cards {
     border-bottom: 1px solid #a09393;
+}
+
+.cards:hover {
+  zoom: 110%;
 }
 
 .main {
