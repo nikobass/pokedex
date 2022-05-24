@@ -7,6 +7,7 @@ import {getPokemonDetailsSuccess} from '../../actions';
 import './pokemoncard.scss'
 import imgpokedex from '../../pokedex.2800773d.png'
 import pokeball from '../../pokeball.gif'
+import pika404 from '../../pika404.png'
 
 
 import {
@@ -47,7 +48,7 @@ const PokemonCard = ({pokemonName, pokemonId}) => {
             setColor(response.data.color.name);
             setHabitat(response.data.habitat.name);           
           })  
-      }).catch(error => setErrorMsg("Ce pokemon est introuvable. Veuillez retourner à l'accueil."));
+      }).catch(error => setErrorMsg("Oops! Ce pokemon est introuvable... Veuillez retourner sur la page d'accueil."));
     }
   }, []);
 
@@ -119,7 +120,14 @@ const PokemonCard = ({pokemonName, pokemonId}) => {
             </div>
           </div>
           <div className='pokecard'>         
-           {errorMsg && <p className='errormsg'>{errorMsg}</p>}  
+           {errorMsg && 
+           <div>            
+            <img className="image-404" src={pika404}
+              alt="image pikachu crying">
+            </img>   
+            <p className='errormsg'>{errorMsg}</p>
+           </div>
+           }  
            {!pokemonId && !errorMsg &&    <img className={pokename ? 'none' : 'showLoader'} src={pokeball}
                   alt="image pokedex">
               </img>  }       

@@ -74,7 +74,12 @@ h1::first-letter {
   background-color: #ffe50a;
   background-image: linear-gradient(to top, #fff8b9, #ffea3d 70%, #ffed51);
   box-shadow: 0 $card-size*0.005 $card-size*0.005 rgba(black, 0.5);
-  transform: rotate(-3deg) translate(5%, 2%)
+  transform: rotate(-3deg) translate(5%, 2%);
+  transition: transform .1s;
+}
+
+.card:hover {
+  transform: rotate(0deg) translate(5%, 2%);
 }
 
 .card__body {
@@ -280,6 +285,8 @@ $badge-front-size: $card-size * 0.171;
 
 .errormsg {
   font-weight: bold;
+  color: #534f54;
+  margin-top: 1rem;
 }
 
 .loading {
@@ -536,4 +543,9 @@ $badge-front-size: $card-size * 0.171;
 
 .image-header {
   height: 5rem;
+}
+
+.image-404 {
+  height: 7rem;
+  margin-top: 3rem;
 }
