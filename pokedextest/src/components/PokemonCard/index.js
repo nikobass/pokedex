@@ -30,8 +30,7 @@ const PokemonCard = ({pokemonName, pokemonId}) => {
   const [types, setType] = React.useState([]); 
   const [errorMsg, setErrorMsg] = React.useState(null);
   
-  React.useEffect(() => {
-    
+  React.useEffect(() => {    
     if(id) {
       axios({
         method: 'get',
@@ -47,19 +46,16 @@ const PokemonCard = ({pokemonName, pokemonId}) => {
           }).then((response) => {
             setColor(response.data.color.name);
             setHabitat(response.data.habitat.name);           
-          })
-  
+          })  
       }).catch(error => setErrorMsg("Ce pokemon est introuvable. Veuillez retourner à l'accueil."));
     }
-  }, []);   
-
-
+  }, []);
 
   return (    
     <div>      
        { !id && 
        <div>
-          <h3 className='pokename'>{pokemonName} - n°{pokemonId}</h3>            
+          <h3 className='pokename'>{pokemonName} #{pokemonId}</h3>            
         <img
           src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId}.png`}
           alt="image pokemon">

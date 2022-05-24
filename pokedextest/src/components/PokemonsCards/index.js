@@ -6,6 +6,7 @@ import { Link, Redirect } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import imgpokedex from '../../pokedex.2800773d.png'
+import imgsasha from '../../sasha.png'
 
 import './pokemonscards.scss'
 
@@ -24,25 +25,28 @@ const PokemonsCards = ({pokemons,pokemonName, inputPokemonName,handleSubmit, han
                 alt="image pokedex">
             </img>   
           </h1>          
-          <form onSubmit={handleSubmit}
-         >
+          <form onSubmit={handleSubmit}>
            { pokemonName &&<Redirect to={`/pokemon/${pokemonName}`} />}
-          <input            
-            type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-            placeholder="nom ou numéro d'un pokémon"
-            onChange={handleInput}
-            value={inputPokemonName}
-            required          
-          />        
+            <img className="image-sasha" src={imgsasha}
+              alt="image sasha">
+            </img>   
+            <input            
+              type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+              placeholder="nom ou numéro d'un pokémon"
+              onChange={handleInput}
+              value={inputPokemonName}
+              required          
+          />  
      
      <button onClick={handleSubmit}>
           <FontAwesomeIcon icon={faSearch} />
           </button>  
           </form>     
-        </div>     
+        </div>       
+        <div className='main-cards'>  
           {
             pokemons.map((pokemon, index) => 
-            <div>
+          
               <div className='cards'>
                 <Link to={`pokemon/${index+1}`}>
                     <PokemonCard 
@@ -51,10 +55,10 @@ const PokemonsCards = ({pokemons,pokemonName, inputPokemonName,handleSubmit, han
                       pokemonId={index+1}                
                     />
                 </Link>                      
-              </div>  
-            </div>
+              </div>             
             )
-          }          
+          }  
+           </div>        
         </div>        
     )
 }

@@ -12,7 +12,7 @@
 }
 
 .pokename {
-    color: #504e4d;
+  color: rgb(37, 59, 92);
 }
 
 .none {
@@ -61,11 +61,7 @@ h1::first-letter {
   margin: 0 auto;
   width: 48vh;
   height: 68vh;
-  &:after {
-    content: '';
-    display: block;
-    padding-top: $card-size * 1.397;
-  }
+ 
 }
 
 .card {

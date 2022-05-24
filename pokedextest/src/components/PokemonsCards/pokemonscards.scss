@@ -5,16 +5,24 @@ body {
 .title-header{  
     background-color: rgb(173 223 248);
     margin-top: 0;
-    padding: 1em;
+    padding: 0.5em;
     text-align: center;
 }
 
 .cards {
-    border-bottom: 1px solid #a09393;
+  padding-right: 3rem;
+  padding-left: 3rem;
+  padding-top: 2rem;
+  margin-bottom: 1rem;
+  flex: auto;
+  background-color: #ffffff;
+  transition: transform .1s;
 }
 
 .cards:hover {
-  zoom: 110%;
+  -ms-transform: scale(1.10); /* IE 9 */
+-webkit-transform: scale(1.10); /* Safari 3-8 */
+transform: scale(1.10);
 }
 
 .main {
@@ -23,13 +31,14 @@ body {
 
 input {
   height: 2rem;
-  width: 19rem;
-  margin-right: 0.3rem;
+  width: 31rem;
+  margin-right: -0.7rem;
   margin-bottom: 3rem;
+  margin-left: 20px;
 }
 
-input[type="text"] {
-  padding-left: 0.5rem;
+input[type="email"] {
+  padding-left: 1.5rem;
 }
 
 button {
@@ -39,4 +48,24 @@ button {
 
 .image-header {
   height: 5rem;
+}
+
+.image-sasha {
+  height: 5rem;
+  position: absolute;
+  top: 160px;
+}
+
+.main-cards {
+  display: flex;
+  border: 1px solid #addff8;
+  width: 60%;
+  flex-wrap: wrap;
+  margin: 1rem auto;
+  padding: 1rem;
+  background-color: #f8f8f8;
+}
+
+form {
+  margin-top: 5rem;
 }
