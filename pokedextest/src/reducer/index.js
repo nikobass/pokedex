@@ -1,7 +1,8 @@
 const initializeState = {
     pokemons: [{}] ,
     pokemonName: '',
-    inputPokemonName: ''
+    inputPokemonName: '',
+    page: 20
 };
 
 const reducer = (state = initializeState, action) => {
@@ -26,6 +27,16 @@ const reducer = (state = initializeState, action) => {
                 ...state,
                 pokemonName: state.inputPokemonName,
                 inputPokemonName: ''            
+            }
+        case 'SET_PAGES_MORE':
+            return {
+                ...state,              
+                page: state.page*2
+            }
+        case 'SET_PAGES_LESS':
+            return {
+                ...state,              
+                page: state.page/2
             }
         default: 
             return state;

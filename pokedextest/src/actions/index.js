@@ -3,6 +3,8 @@ export const GET_POKEMONS_SUCCESS = 'GET_POKEMONS_SUCCESS';
 export const CHANGE_INPUT_POKEMON = 'CHANGE_INPUT_POKEMON';
 export const SUBMIT_FORM = 'SUBMIT_FORM';
 export const GET_POKEMON_DETAILS_SUCCESS = 'GET_POKEMON_DETAILS_SUCCESS';
+export const SET_PAGES_MORE = 'SET_PAGES_MORE';
+export const SET_PAGES_LESS = 'SET_PAGES_LESS';
 
 export const getPokemonsFromAPI = () => ({
     type: GET_POKEMONS_FROM_API
@@ -25,3 +27,11 @@ export const setPokemonName = (inputPokemonValue) => ({
 export const submitFormPokemon =  () => ({
     type: SUBMIT_FORM
 });
+
+export const setPageViewMore = () => ({
+    type: SET_PAGES_MORE
+})
+
+export const setPageViewLess = () => ({
+    type: SET_PAGES_LESS
+})
