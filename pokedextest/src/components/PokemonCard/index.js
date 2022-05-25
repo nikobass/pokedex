@@ -17,7 +17,7 @@ import {
 const PokemonCard = ({pokemonName, pokemonId}) => {
 
   const dispatch = useDispatch();
-  useEffect(() => {   
+  useEffect(() => {  
     if(id) {
       dispatch(getPokemonDetailsSuccess()); 
     }      
