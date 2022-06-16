@@ -4,9 +4,9 @@ This project has been realized as a training (react, redux, routes, middlewares,
 
 # Pokedex
 
-View pokemons, details, searsh
+View pokemons, details, search
 
-Home!
+Home
 
 ![pokedex home](https://raw.githubusercontent.com/nikobass/pokedex/master/pokedextest/src/home.png)
 
