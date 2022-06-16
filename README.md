@@ -1,6 +1,6 @@
 # Purpose
 
-This project has been realized as a technical test and can be used as a training (react, redux, routes, middlewares, api...)
+This project has been realized as a training (react, redux, routes, middlewares, api...) and for fun <3
 
 # Pokedex
 
