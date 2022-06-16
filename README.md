@@ -6,7 +6,7 @@ This project has been realized as a training (react, redux, routes, middlewares,
 
 View pokemons, details, searsh
 
-Home
+Home!
 
 ![pokedex home](https://raw.githubusercontent.com/nikobass/pokedex/master/pokedextest/src/home.png)
 
