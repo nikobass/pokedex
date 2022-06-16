@@ -6,6 +6,14 @@ This project has been realized as a training (react, redux, routes, middlewares,
 
 View pokemons, details, searsh
 
+Home
+
+![pokedex home](https://raw.githubusercontent.com/nikobass/pokedex/master/pokedextest/src/home.png)
+
+Details
+
+![pokedex detail](https://raw.githubusercontent.com/nikobass/pokedex/master/pokedextest/src/detail.png)
+
 # Run
 
 npm start
