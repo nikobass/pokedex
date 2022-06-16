@@ -40,11 +40,13 @@ const PokemonCard = ({pokemonName, pokemonId}) => {
       .then((response) => {           
           setName(response.data.name);    
           setId(response.data.id);
-          setType(response.data.types);          
+          setType(response.data.types); 
+          console.log(response)         
           axios({
             method: 'get',
             url: `${response.data.species.url}`          
           }).then((response) => {
+           
             setColor(response.data.color.name);
             setHabitat(response.data.habitat.name);           
           })  
